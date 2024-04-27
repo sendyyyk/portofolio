@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg-black-rgb: 0, 0, 0;
+    --bg-color-rgb: 238, 238, 238;
+    --bg-primary-rgb: 248 113 113;
+    --bg-secondary-rgb: 37, 37, 37;
+    --bg-black: #000000;
+    --bg-color: #eeeeee;
+    --primary-color: #f87171;
+    --secondary-color: #252525;
+}
+
+/* class color ================ */
+.primary-color-bg {
+    background-color: var(--primary-color);
+}
+.primary-color-txt {
+    color: var(--primary-color);
+}
+.bg-black {
+    background-color: var(--bg-black);
+}
+.bg-black-txt {
+    color: var(--bg-black);
+}
+.secondary-color-bg {
+    background-color: var(--secondary-color);
+}
+.secondary-color-txt {
+    color: var(--secondary-color);
+}
+.bg-white {
+    background-color: var(--bg-color);
+}
+.bg-white-txt {
+    color: var(--bg-color);
+}
+/* class color ================ */
+
+.translate-y-min {
+    transform: translateY(-100%);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    color: var(--secondary-color);
+}
+
+
+@media screen and (max-width: 1400px) {
+
+    nav.container-custom {
+        width: 100%;
+        padding: 0 3vw;
+    }
+
+    .hero-title h1 {
+        margin-bottom: 1vw;
+    }
+
+    .hero-title span {
+        line-height: 6.8vw;
+        font-size: 6.8vw;
+    }
+
+    .hero-title .scroll-text-wrap {
+        margin-bottom: 2vw;
+    }
+
+    .hero-title .scroll-text {
+        line-height: 0;
+        line-height: 2.1vw;
+        font-size: 2.1vw;
+    }
+
+    .hero-title button {
+        line-height: 0;
+        padding: 0;
+        height: 4.5vw;
+        width: 11.5vw;
+        border-radius: 0.5vw;
+    }
+
+    .hero-title button span {
+        line-height: 1.4vw;
+        font-size: 1.4vw;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #header-wrap header {
+        margin-top: 0;
+    }
+
+    .menu-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Header */
+    #header-wrap header {
+        height: 15vw;
+    }
+
+    #header-wrap header nav .logo-navbar {
+        line-height: 6.3vw;
+        font-size: 6.3vw;
+    }
+
+    #header-wrap header button#hamburger-btn {
+        width: 6.3vw;
+        height: 6.3vw;
+    }
+
+    /* Hero Image */
+    #hero-image div.container-custom {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 71vw;
+        height: 85vw;
+    }
+
+    #hero-image .hero-title {
+        position: static;
+        width: 100%;
+        order: 1;
+        height: 15%;
+        padding: 0;
+        line-height: 0;
+    }
+
+    #hero-image .hero-icon {
+        direction: rtl;
+        width: 100%;
+        height: 85%;
+        margin-bottom: 3vw;
+        padding: 0;
+    }
+
+    .hero-title h1 {
+        margin-bottom: 1vw;
+    }
+
+    .hero-title span {
+        line-height: 10vw;
+        font-size: 10vw;
+    }
+
+    .hero-title .scroll-text-wrap {
+        margin-bottom: 2vw;
+    }
+
+    .hero-title .scroll-text {
+        line-height: 0;
+        line-height: 2.5vw;
+        font-size: 2.5vw;
+    }
+
+    .hero-title button {
+        line-height: 0;
+        padding: 0;
+        height: 8vw;
+        width: 20vw;
+        border-radius: 0.5vw;
+    }
+
+    .hero-title button span {
+        line-height: 2.5vw;
+        font-size: 2.5vw;
+    }
+
+}
+
+@keyframes scrollingText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        /* transform: translateX(-1px); */
+    }
+}
+
+/* MOBILE VIEW  */
+/* ===================== START =====================*/
+
+#navbar-mobile .menu-mobile .menu-bar-mobile {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: end;
+    width: 50%;
+    margin: 0 0 0 auto;
+    box-shadow: 0 0 2vw 1.5vw rgba(var(--bg-secondary-rgb), 0.5);
+    background-color: darkcyan;
+    overflow: auto;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile::before {
+    content: "Menu";
+    display: block;
+    width: 100%;
+    height: 10vw;
+    background-color: aqua;
+    font-size: 3vw;
+    text-align: center;
+    line-height: 10vw;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul{
+    display: block;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    background-color: brown;
+}
+
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li {
+    display: flex;
+    height: 8vw;
+    margin: 2vw auto;
+    background-color: #bfce37;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a {
+    direction: rtl;
+    width: 100%;
+    height: 100%;
+    padding: 0 3vw;
+    font-size: 2.5vw;
+    font-weight: 500;
+    text-align: start;
+    line-height: 8vw;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active {
+    background-color: var(--primary-color);
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a span {
+    margin: 0 0 0 1vw;
+    color: var(--secondary-color);
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active > path {
+    stroke: var(--secondary-color);
+}
+
+/* ===================== END =====================*/
+/* MOBILE VIEW */
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container-custom {
+    width: 1366px;
+}
+
+header {
+    width: 100%;
+}
+
+header nav {
+    height: inherit;
+    backdrop-filter: 50px;
+}
+
+header nav .logo-navbar a {
+    font-family: "Alex Brush", sans-serif;
+}
+
+header nav .menu-bar ul {
+    line-height: inherit;
+}
+
+header nav .menu-bar ul li {
+    font-family: "Alex Brush", sans-serif;
+}
+
+header nav .menu-bar ul li a,
+span,
+path {
+    transition: all 0.5s;
+}
+
+header nav .menu-bar ul li a,
+span,
+path,
+svg {
+    color: rgba(37, 37, 37, 0.7);
+}
+
+header nav .menu-bar ul li a:hover,
+a:hover span,
+a:hover path,
+a:hover svg {
+    color: var(--bg-black);
+    stroke: var(--secondary-color);
+}
+
+header nav .menu-bar ul .list-menu a::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    transition: all 0.5s;
+}
+
+header nav .menu-bar ul .list-menu:nth-child(3) a:hover::after {
+    content: "";
+    width: 0%;
+    height: 0px;
+}
+
+header nav .menu-bar ul .list-menu a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown Item */
+
+header nav .menu-bar ul .list-menu:nth-child(3) a:hover>.dropdown-item {
+    width: 32rem;
+}
+
+header nav .menu-bar ul .list-menu:nth-child(3):hover {
+    margin-bottom: 0;
+    margin-top: auto;
+    margin-right: 4rem;
+    height: 100%;
+}
+
+header nav .menu-bar ul .list-menu:nth-child(3):hover a.dropdown {
+    height: 67%;
+    margin: auto 0 0;
+}
+
+header nav .menu-bar ul .list-menu:nth-child(3):hover svg {
+    margin-top: 8%;
+}
+
+/* Dropdown style */
+
+header nav .menu-bar ul .list-menu a .dropdown-item {
+    scroll-behavior: smooth;
+    border-bottom: 4px solid var(--secondary-color);
+    background-color: rgba(var(--bg-black-rgb), 0.8);
+}
+
+header nav .menu-bar ul .list-menu a .dropdown-item:hover body {
+    overflow: hidden;
+}
+
+header nav .menu-bar ul .list-menu a .dropdown-item a {
+    color: var(--bg-black);
+    background-color: rgba(var(--bg-color-rgb), 0.7);
+}
+
+header nav .menu-bar ul .list-menu a .dropdown-item a:hover {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+header nav .menu-bar ul .list-menu:nth-child(3) .dropdown-item a::after {
+    content: "";
+    width: 0%;
+    height: 0px;
+}
+
+/* ScrollBar Dropdown */
+header nav .menu-bar ul .list-menu:nth-child(3) .dropdown-item::-webkit-scrollbar {
+    transform: rotate(180deg);
+    height: 8px;
+    background-color: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--secondary-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 999px;
+}
+
+/* Dark Mode Button */
+header nav .menu-bar ul .list-menu:last-child button {
+    box-shadow: 0 0 5px 1px rgba(37, 37, 37, 0.5);
+    transition: all 0.5s;
+}
+
+header nav .menu-bar ul .list-menu:last-child button:hover {
+    box-shadow: 0 0 10px 5px rgba(37, 37, 37, 0.6);
+}
+
+/* Hero Image */
+
+#hero-image {
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--primary-color), var(--bg-color));
+}
+
+/* Hero Title */
+
+.hero-title h1 span {
+    color: rgba(var(--bg-black), 1);
+    font-family: 'Alice', sans-serif;
+}
+
+/* Hero Scroll Text */
+
+.scroll-text {
+    animation-name: scrollingText;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
