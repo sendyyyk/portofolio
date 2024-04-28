@@ -1,12 +1,14 @@
 import Button from "../Button";
 import DropdownList from "./dropdown";
 import DropdownMenu from "../../Layouts/DropdownMenu";
-import { useState } from "react";
+import { useRef } from "react";
+let menuBarEx;
 
 const Menu = () => {
-
+    const menuBar = useRef(null);
+    menuBarEx = menuBar;
     return (
-        <section className="menu-bar flex">
+        <section ref={menuBar} className="menu-bar flex">
             <ul className="flex mt-auto text-xl h-full">
                 <li className="list-menu flex mr-16 my-auto">
                     <a href="/" className="block">Home</a>
@@ -51,4 +53,5 @@ const Menu = () => {
     )
 }
 
+export { menuBarEx };
 export default Menu;

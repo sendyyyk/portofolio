@@ -1,5 +1,6 @@
 import { classHeight } from '../../components/Layouts/DropdownMenu';
 import { menuMbEx } from '../../components/Elements/navbar/Navbar-Mobile/navbarMobile';
+import { menuBarEx } from '../../components/Elements/navbar//menu';
 document.addEventListener("DOMContentLoaded", function () {
     function scrollOveflow() {
         const dropdownItem = document.getElementById("dropdown-item");
@@ -14,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function cloneMenu() {
-        const cloneMenuBar = document.querySelector(".menu-bar");
-        const clonedElement = cloneMenuBar.cloneNode(true);
+        const clonedElement = menuBarEx.current.cloneNode(true);
         clonedElement.classList.add("menu-bar-mobile");
         menuMbEx.current.appendChild(clonedElement);
     }

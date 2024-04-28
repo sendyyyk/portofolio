@@ -4,8 +4,9 @@ let menuMbEx;
 const NavbarMobile = () => {
     const navMb = useRef(null);
     const menuMb = useRef(null);
+
     useEffect(() => {
-        
+
         function handleResize() {
             const headerHeight = document.querySelector("#header-wrap header").clientHeight;
             const itemZindex = document.querySelectorAll(".item-zindex");
@@ -15,7 +16,7 @@ const NavbarMobile = () => {
                     element.style.zIndex = zIndex;
                 }
             }
-            
+
             if (window.innerWidth <= 992) {
                 navMb.current.classList.add("block");
                 navMb.current.classList.remove("hidden");
@@ -26,10 +27,10 @@ const NavbarMobile = () => {
                 zIndex("0");
             }
         }
-        
+
         window.addEventListener('resize', handleResize);
         window.addEventListener('load', handleResize);
-        
+
         menuMbEx = menuMb;
     }, [])
 
