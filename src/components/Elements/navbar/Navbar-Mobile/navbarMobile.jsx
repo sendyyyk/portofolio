@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
+let menuMbEx;
 
 const NavbarMobile = () => {
     const navMb = useRef(null);
     const menuMb = useRef(null);
-
     useEffect(() => {
+        
         function handleResize() {
             const headerHeight = document.querySelector("#header-wrap header").clientHeight;
             const itemZindex = document.querySelectorAll(".item-zindex");
@@ -25,10 +26,11 @@ const NavbarMobile = () => {
                 zIndex("0");
             }
         }
-
+        
         window.addEventListener('resize', handleResize);
         window.addEventListener('load', handleResize);
-
+        
+        menuMbEx = menuMb;
     }, [])
 
     return (
@@ -38,4 +40,5 @@ const NavbarMobile = () => {
     )
 }
 
+export { menuMbEx };
 export default NavbarMobile;

@@ -1,7 +1,6 @@
-import DropdownMenu, { classHeight } from '../../components/Layouts/DropdownMenu';
+import { classHeight } from '../../components/Layouts/DropdownMenu';
+import { menuMbEx } from '../../components/Elements/navbar/Navbar-Mobile/navbarMobile';
 document.addEventListener("DOMContentLoaded", function () {
-    const bodyHeight = document.body.clientHeight;
-    const bodyWidth = document.body.clientWidth;
     function scrollOveflow() {
         const dropdownItem = document.getElementById("dropdown-item");
         dropdownItem.addEventListener('wheel', function (event) {
@@ -13,14 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
+
     function cloneMenu() {
         const cloneMenuBar = document.querySelector(".menu-bar");
-        const menuMobile = document.querySelector("#navbar-mobile .menu-mobile");
         const clonedElement = cloneMenuBar.cloneNode(true);
         clonedElement.classList.add("menu-bar-mobile");
-        menuMobile.appendChild(clonedElement);
-        console.log(menuMobile);
+        menuMbEx.current.appendChild(clonedElement);
     }
 
     function menuBarMobile() {
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("#navbar-mobile .menu-bar-mobile").style.height = `calc(100% - ${document.querySelector("#header-wrap header").clientHeight}px)`;
         }
     }
-    
+
     function dropdownShow() {
         let dropdownBtn = document.querySelector("#navbar-mobile #dropdown-btn")
         const thirdLi = document.querySelector("#navbar-mobile .list-menu").parentElement.querySelector(":nth-child(3)");
@@ -50,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dropdownShow()
         menuBarMobile()
     };
-    
+
     window.onresize = function () {
         menuBarMobile()
         scrollOveflow();

@@ -9,7 +9,6 @@ const Header = () => {
         function headerHeight() {
             const bodyHeight = document.body.clientHeight;
             headerWrap.current.style.height = bodyHeight + "px";
-            // headerWrap.current.style.zIndex = "-99";
         }
 
         headerHeight();
@@ -19,7 +18,7 @@ const Header = () => {
             window.removeEventListener("resize", headerHeight);
             window.removeEventListener("load", headerHeight);
         };
-        
+
     },[])
 
     return (
