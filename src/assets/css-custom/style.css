@@ -15,27 +15,35 @@
 .primary-color-bg {
     background-color: var(--primary-color);
 }
+
 .primary-color-txt {
     color: var(--primary-color);
 }
+
 .bg-black {
     background-color: var(--bg-black);
 }
+
 .bg-black-txt {
     color: var(--bg-black);
 }
+
 .secondary-color-bg {
     background-color: var(--secondary-color);
 }
+
 .secondary-color-txt {
     color: var(--secondary-color);
 }
+
 .bg-white {
     background-color: var(--bg-color);
 }
+
 .bg-white-txt {
     color: var(--bg-color);
 }
+
 /* class color ================ */
 
 .translate-y-min {
@@ -96,6 +104,12 @@
     .menu-bar {
         display: none;
     }
+
+
+    #navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button svg {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -114,6 +128,7 @@
         width: 6.3vw;
         height: 6.3vw;
     }
+
 
     /* Hero Image */
     #hero-image div.container-custom {
@@ -187,66 +202,172 @@
 /* MOBILE VIEW  */
 /* ===================== START =====================*/
 
+/* Line Change Hamburger Menu */
+.cross-top {
+    transform: rotate(-45deg);
+    height: 1px;
+    margin: 0 auto;
+}
+
+.cross-center {
+    display: none;
+}
+
+.cross-bottom {
+    position: absolute;
+    margin: 0 auto;
+    transform: rotate(45deg);
+}
+
+/* Line Change Hamburger Menu */
+
 #navbar-mobile .menu-mobile .menu-bar-mobile {
     display: flex;
-    position: relative;
     flex-direction: column;
     align-items: end;
-    width: 50%;
+    width: calc(100% / 2.5);
     margin: 0 0 0 auto;
-    box-shadow: 0 0 2vw 1.5vw rgba(var(--bg-secondary-rgb), 0.5);
-    background-color: darkcyan;
-    overflow: auto;
+    box-shadow: 0 0 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
+    overflow-y: auto;
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile::before {
     content: "Menu";
     display: block;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: 10vw;
-    background-color: aqua;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
     font-size: 3vw;
     text-align: center;
     line-height: 10vw;
+    border-bottom: 0.3vw solid var(--secondary-color);
 }
 
-#navbar-mobile .menu-mobile .menu-bar-mobile ul{
+#navbar-mobile .menu-mobile .menu-bar-mobile ul {
     display: block;
     margin: 0;
-    height: auto;
     width: 100%;
-    background-color: brown;
+    height: auto;
 }
 
+#navbar-mobile .menu-mobile .menu-bar-mobile ul:not(#dropdown-menu)::after {
+    content: "";
+    display: block;
+    height: 10vw;
+    width: 100%;
+}
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li {
     display: flex;
-    height: 8vw;
-    margin: 2vw auto;
-    background-color: #bfce37;
+    height: 10vw;
+    overflow: hidden;
+    margin: 0 auto;
+    border-bottom: 0.1vw solid rgba(var(--bg-secondary-rgb), 0.5);
 }
 
-#navbar-mobile .menu-mobile .menu-bar-mobile ul li a {
-    direction: rtl;
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:nth-child(3) {
+    position: relative;
+    display: block;
+    margin: 0;
+    height: auto;
+    transition: all 0.5s;
+    overflow-y: hidden;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:nth-child(3) a {
+    height: auto;
+}
+
+#navbar-mobile #dropdown-item {
+    margin: 0;
+    top: 10vw;
+    bottom: 0;
+    overflow: visible;
+    height: auto;
+    width: 100%;
+}
+
+#navbar-mobile #dropdown-item ul {
+    position: static;
+    width: 100% !important;
+    height: 100%;
+    margin: 0;
+}
+
+#navbar-mobile #dropdown-item ul li {
+    margin: 0;
+    width: 100% !important;
+    height: 10vw;
+    overflow: visible;
+}
+
+#navbar-mobile #dropdown-item ul li:first-child {
+    border-top: 0.1vw solid rgba(var(--bg-secondary-rgb), 0.5);
+}
+
+#navbar-mobile #dropdown-item ul li a {
+    direction: ltr;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0 3vw;
+    border-radius: 0;
+}
+
+/* Dark Mode Button Mobile =======*/
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:not(#dropdown-menu li):last-child {
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    width: calc(100% / 2.5);
+    box-shadow: 0 0 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    background-color: var(--bg-color);
+}
+
+/* Dark Mode Button Mobile ======= */
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a svg{
+    width: 3vw;
+    height: 3vw;
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:not(#dropdown-menu a) {
+    direction: rtl;
+    width: 100%;
+    height: 10vw;
     padding: 0 3vw;
     font-size: 2.5vw;
     font-weight: 500;
     text-align: start;
-    line-height: 8vw;
+    line-height: 10vw;
 }
 
-#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active {
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active,
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button:active {
     background-color: var(--primary-color);
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li a span {
     margin: 0 0 0 1vw;
     color: var(--secondary-color);
+    font-size: 2.5vw;
+    font-weight: 500;
 }
 
-#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active > path {
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li a:active>path {
     stroke: var(--secondary-color);
 }
 

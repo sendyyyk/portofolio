@@ -6,7 +6,7 @@ import Footer from "../components/Fragments/Footer/Footer";
 import Container from "../components/Layouts/Container";
 
 const Home = () => {
-
+    
     return (
         <Fragment>
             <Helmet>

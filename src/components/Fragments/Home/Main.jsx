@@ -17,26 +17,30 @@ const MainHome = () => {
             
             if (currentPath === "/") {
                 if (window.innerWidth <= 992) {
-                    if (window.innerWidth <= 768) {
+                    if (window.innerWidth <= 576) {
                         if (window.innerHeight <= heroIconHeight + headerHeight * 3) {
+                            heroImage.current.style.height = `calc(100vh + 400px)`;
+                        } else {
+                            heroImage.current.style.height = `100vh`;
+                        }
+                    } else if (window.innerWidth <= 768) {
+                        if (window.innerHeight <= heroIconHeight + headerHeight * 3.5) {
                             if (window.innerWidth <= 576) {
                                 heroImage.current.style.height = `calc(100vh + 250px)`;
                             } else {
-                                heroImage.current.style.height = `calc(100vh + 500px)`;
+                                if (window.innerHeight <= heroIconHeight) {
+                                    heroImage.current.style.height = `calc(100vh + 750px)`;
+                                } else {
+                                    heroImage.current.style.height = `calc(100vh + 400px)`;
+                                }
                             }
                         } else {
                             heroImage.current.style.height = `100vh`;
                         }
-                    } else {
-                        if (window.innerHeight <= heroIconHeight + headerHeight * 2.5) {
-                            heroImage.current.style.height = `calc(100vh + 300px)`;
-                        } else {
-                            heroImage.current.style.height = `100vh`;
-                        }
-                    }
+                    } 
                 } else if (window.innerWidth > 992) {
                     if (window.innerHeight <= heroIconHeight + headerHeight * 2) {
-                        heroImage.current.style.height = `calc(100vh + 400px)`;
+                        heroImage.current.style.height = `calc(100vh + 450px)`;
                     } else {
                         heroImage.current.style.height = `100vh`;
                     }

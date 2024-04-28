@@ -19,6 +19,7 @@ const Header = () => {
             window.removeEventListener("resize", headerHeight);
             window.removeEventListener("load", headerHeight);
         };
+        
     },[])
 
     return (
