@@ -8,16 +8,16 @@ import ErrorPage from './Pages/404errorPage.jsx';
 import './assets/css-custom/style.css';
 
 function App() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'src/assets/javascript/script.js'; // Ganti dengan jalur yang sesuai
-    script.defer = true;
-    document.body.appendChild(script);
+  // useEffect(() => {
+  //   const script = document.createElement('script');
+  //   script.src = 'src/assets/javascript/script.js'; // Ganti dengan jalur yang sesuai
+  //   script.defer = true;
+  //   document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
   return (
     <React.StrictMode>
       <Router>
