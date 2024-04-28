@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     
     window.onresize = function () {
+        cloneMenu()
         scrollOveflow();
     }
 
