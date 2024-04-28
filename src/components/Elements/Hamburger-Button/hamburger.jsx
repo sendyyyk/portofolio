@@ -7,6 +7,16 @@ const HamburgerBtn = (props) => {
     const line2Ref = useRef(null);
     const line3Ref = useRef(null);
 
+    function handleClick() {
+        const navbarMobile = document.getElementById("navbar-mobile");
+        const menuMobile = navbarMobile.querySelector(".menu-mobile");
+        menuMobile.classList.toggle("translate-y-min");
+        document.body.classList.toggle("overflow-hidden");
+        line1Ref.current.classList.toggle("cross-top");
+        line2Ref.current.classList.toggle("cross-center");
+        line3Ref.current.classList.toggle("cross-bottom");
+    }
+
     useEffect(() => {
         const navbarMobile = document.getElementById("navbar-mobile");
         const menuMobile = navbarMobile.querySelector(".menu-mobile");
@@ -32,29 +42,18 @@ const HamburgerBtn = (props) => {
                 line3Ref.current.classList.remove("cross-bottom");
             }
         }
-        function handleClick() {
-            menuMobile.classList.toggle("translate-y-min");
-            document.body.classList.toggle("overflow-hidden");
-            line1Ref.current.classList.toggle("cross-top");
-            line2Ref.current.classList.toggle("cross-center");
-            line3Ref.current.classList.toggle("cross-bottom");
-        }
         
-        const hamburgerBtn = document.getElementById("hamburger-btn");
-        hamburgerBtn.addEventListener('click', handleClick);
-
         window.addEventListener('resize', handleResize);
         window.addEventListener('load', handleResize);
         
         return () => {
-            hamburgerBtn.removeEventListener('click', handleClick);
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('load', handleResize);
         };
     }, []);
 
     return (
-        <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button">
+        <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
             <div ref={lineWrapRef} className={`line-wrap flex flex-col relative justify-center mx-auto my-auto ${dimention}`}>
                 <span ref={line1Ref} className={`w-full bg-primary h-1/6 my-0 mb-auto opacity-80`} style={{ height: "0.3vw" }}></span>
                 <span ref={line2Ref} className={`w-full bg-primary h-1/6 mx-auto opacity-80`} style={{ height: "0.3vw" }}></span>
