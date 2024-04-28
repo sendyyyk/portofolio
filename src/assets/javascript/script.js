@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     function cloneMenu() {
         const cloneMenuBar = document.querySelector(".menu-bar");
-        const menuMobile = document.querySelector("#navbar-mobile .menu-mobile")
+        const menuMobile = document.querySelector("#navbar-mobile .menu-mobile");
         const clonedElement = cloneMenuBar.cloneNode(true);
         clonedElement.classList.add("menu-bar-mobile");
         menuMobile.appendChild(clonedElement);
+        console.log(menuMobile);
     }
 
     function menuBarMobile() {
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     
     window.onresize = function () {
-        cloneMenu()
+        menuBarMobile()
         scrollOveflow();
     }
 
