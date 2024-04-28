@@ -14,16 +14,11 @@ const NavbarMobile = () => {
                     element.style.zIndex = zIndex;
                 }
             }
-
-            function menuBarMobile() {
-                document.querySelector("#navbar-mobile .menu-bar-mobile").style.height = `calc(100% - ${headerHeight}px)`;
-            }
-
+            
             if (window.innerWidth <= 992) {
                 navMb.current.classList.add("block");
                 navMb.current.classList.remove("hidden");
                 zIndex("10");
-                menuBarMobile();
             } else {
                 navMb.current.classList.add("hidden");
                 navMb.current.classList.remove("block");

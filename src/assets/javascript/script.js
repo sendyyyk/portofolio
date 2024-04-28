@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
         menuMobile.appendChild(clonedElement);
     }
 
+    function menuBarMobile() {
+        if (window.innerWidth <= 992) {
+            document.querySelector("#navbar-mobile .menu-bar-mobile").style.height = `calc(100% - ${document.querySelector("#header-wrap header").clientHeight}px)`;
+        }
+    }
     
     function dropdownShow() {
         let dropdownBtn = document.querySelector("#navbar-mobile #dropdown-btn")
@@ -42,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollOveflow()
         cloneMenu()
         dropdownShow()
+        menuBarMobile()
     };
     
     window.onresize = function () {
