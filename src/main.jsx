@@ -6,6 +6,7 @@ import Home from './Pages/HomePage.jsx';
 import About from './Pages/AboutPage.jsx';
 import ErrorPage from './Pages/404errorPage.jsx';
 import './assets/css-custom/style.css';
+import './assets/javascript/script.js';
 
 function App() {
   // useEffect(() => {
