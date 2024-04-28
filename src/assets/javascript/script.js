@@ -1,4 +1,4 @@
-import { classHeight } from '../../components/Layouts/DropdownMenu';
+import DropdownMenu, { classHeight } from '../../components/Layouts/DropdownMenu';
 document.addEventListener("DOMContentLoaded", function () {
     const bodyHeight = document.body.clientHeight;
     const bodyWidth = document.body.clientWidth;

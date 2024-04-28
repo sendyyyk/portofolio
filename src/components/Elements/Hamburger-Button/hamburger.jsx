@@ -6,7 +6,6 @@ const HamburgerBtn = (props) => {
     const line1Ref = useRef(null);
     const line2Ref = useRef(null);
     const line3Ref = useRef(null);
-    
 
     useEffect(() => {
         const navbarMobile = document.getElementById("navbar-mobile");
@@ -43,7 +42,7 @@ const HamburgerBtn = (props) => {
         
         const hamburgerBtn = document.getElementById("hamburger-btn");
         hamburgerBtn.addEventListener('click', handleClick);
-        
+
         window.addEventListener('resize', handleResize);
         window.addEventListener('load', handleResize);
         

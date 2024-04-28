@@ -37,7 +37,13 @@ const MainHome = () => {
                         } else {
                             heroImage.current.style.height = `100vh`;
                         }
-                    } 
+                    } else {
+                        if (window.innerHeight <= heroIconHeight + headerHeight * 2) {
+                            heroImage.current.style.height = `calc(100vh + 400px)`;
+                        } else {
+                            heroImage.current.style.height = `100vh`;
+                        }
+                    }
                 } else if (window.innerWidth > 992) {
                     if (window.innerHeight <= heroIconHeight + headerHeight * 2) {
                         heroImage.current.style.height = `calc(100vh + 450px)`;
