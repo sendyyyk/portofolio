@@ -24,8 +24,8 @@ const HamburgerBtn = (props) => {
         
         function handleResize() {
             if (window.innerWidth <= 992) {
-                document.getElementById("hamburger-btn").classList.remove("hidden");
                 document.getElementById("hamburger-btn").classList.add("flex");
+                document.getElementById("hamburger-btn").classList.remove("hidden");
     
                 const buttonWidth = document.getElementById("hamburger-btn").offsetWidth;
                 const buttonHeight = document.getElementById("hamburger-btn").offsetHeight;
@@ -50,7 +50,7 @@ const HamburgerBtn = (props) => {
 
 
     return (
-        <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
+        <button id="hamburger-btn" className={`hidden ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
             <div ref={lineWrapRef} className={`line-wrap flex flex-col relative justify-center mx-auto my-auto ${dimention}`}>
                 <span ref={line1Ref} className={`w-full bg-primary h-1/6 my-0 mb-auto opacity-80`} style={{ height: "0.3vw" }}></span>
                 <span ref={line2Ref} className={`w-full bg-primary h-1/6 mx-auto opacity-80`} style={{ height: "0.3vw" }}></span>
