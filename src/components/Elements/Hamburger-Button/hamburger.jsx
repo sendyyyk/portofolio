@@ -9,36 +9,26 @@ const HamburgerBtn = (props) => {
     }
 
     useEffect(() => {
+        const navbarMobile = document.getElementById("navbar-mobile");
+        const menuMobile = navbarMobile.querySelector(".menu-mobile");
+        if (window.innerWidth <= 992) {
+            document.getElementById("hamburger-btn").classList.remove("hidden");
+            document.getElementById("hamburger-btn").classList.add("flex");
 
-        function handleResize() {
-            const navbarMobile = document.getElementById("navbar-mobile");
-            const menuMobile = navbarMobile.querySelector(".menu-mobile");
-            if (window.innerWidth <= 992) {
-                document.getElementById("hamburger-btn").classList.remove("hidden");
-                document.getElementById("hamburger-btn").classList.add("flex");
-
-                const buttonWidth = document.getElementById("hamburger-btn").offsetWidth;
-                const buttonHeight = document.getElementById("hamburger-btn").offsetHeight;
-                if (lineWrapRef.current) {
-                    lineWrapRef.current.style.width = `${buttonWidth / 1.5}px`;
-                    lineWrapRef.current.style.height = `${buttonHeight / 1.7}px`;
-                }
-            } else {
-                document.getElementById("hamburger-btn").classList.remove("flex");
-                document.getElementById("hamburger-btn").classList.add("hidden");
-                menuMobile.classList.add("translate-y-min");
-                document.body.classList.remove("overflow-hidden");
-                setIsMenuOpen(false);
+            const buttonWidth = document.getElementById("hamburger-btn").offsetWidth;
+            const buttonHeight = document.getElementById("hamburger-btn").offsetHeight;
+            if (lineWrapRef.current) {
+                lineWrapRef.current.style.width = `${buttonWidth / 1.5}px`;
+                lineWrapRef.current.style.height = `${buttonHeight / 1.7}px`;
             }
+        } else {
+            document.getElementById("hamburger-btn").classList.remove("flex");
+            document.getElementById("hamburger-btn").classList.add("hidden");
+            menuMobile.classList.add("translate-y-min");
+            document.body.classList.remove("overflow-hidden");
+            setIsMenuOpen(false);
         }
 
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('load', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('load', handleResize);
-        };
     }, []);
 
     useEffect(() => {
