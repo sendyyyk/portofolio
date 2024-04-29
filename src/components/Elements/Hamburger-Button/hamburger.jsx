@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { menuMbEx } from '../navbar/Navbar-Mobile/navbarMobile';
 
-const HamburgerBtn = (props) => {
+const HamburgerBtn = () => {
     const lineWrapRef = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -10,25 +10,28 @@ const HamburgerBtn = (props) => {
     }
 
     useEffect(() => {
-        if (window.innerWidth <= 992) {
-            document.getElementById("hamburger-btn").classList.remove("hidden");
-            document.getElementById("hamburger-btn").classList.add("flex");
-
-            const buttonWidth = document.getElementById("hamburger-btn").offsetWidth;
-            const buttonHeight = document.getElementById("hamburger-btn").offsetHeight;
-            if (lineWrapRef.current) {
-                lineWrapRef.current.style.width = `${buttonWidth / 1.5}px`;
-                lineWrapRef.current.style.height = `${buttonHeight / 1.7}px`;
+        function handleResize() {
+            if (window.innerWidth <= 992) {
+                document.getElementById("hamburger-btn").classList.remove("hidden");
+                document.getElementById("hamburger-btn").classList.add("flex");
+    
+            } else {
+                document.getElementById("hamburger-btn").classList.remove("flex");
+                document.getElementById("hamburger-btn").classList.add("hidden");
+                document.body.classList.remove("overflow-hidden");
+                setIsMenuOpen(false);
             }
-        } else {
-            document.getElementById("hamburger-btn").classList.remove("flex");
-            document.getElementById("hamburger-btn").classList.add("hidden");
-            document.body.classList.remove("overflow-hidden");
-            setIsMenuOpen(false);
         }
 
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
+    
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleResize);
+        };
     }, []);
-
+    
     useEffect(() => {
         if (menuMbEx.current) {
             menuMbEx.current.classList.toggle("translate-y-min", !isMenuOpen);
@@ -38,10 +41,10 @@ const HamburgerBtn = (props) => {
 
     return (
         <button id="hamburger-btn" className={`flex w-12 h-12 my-auto shadow-xl`} type="button" onClick={handleClick}>
-            <div ref={lineWrapRef} className={`line-wrap flex flex-col relative justify-center mx-auto my-auto w-12 h-12`}>
-                <span className={`w-full bg-primary h-1/6 my-0 mb-auto opacity-80 ${isMenuOpen ? "cross-top" : ""}`} style={{ height: "0.3vw" }}></span>
-                <span className={`w-full bg-primary h-1/6 mx-auto opacity-80 ${isMenuOpen ? "cross-center" : ""}`} style={{ height: "0.3vw" }}></span>
-                <span className={`w-full bg-primary h-1/6 my-auto mb-0 opacity-80 ${isMenuOpen ? "cross-bottom" : ""}`} style={{ height: "0.3vw" }}></span>
+            <div ref={lineWrapRef} className={`line-wrap flex flex-col justify-between relative mx-auto my-auto w-full h-full `}>
+                <span className={`w-full secondary-color-bg my-0 mb-auto opacity-80 ${isMenuOpen ? "cross-top" : ""}`} style={{ height: "0.2vw" }}></span>
+                <span className={`w-full secondary-color-bg mx-auto opacity-80 ${isMenuOpen ? "cross-center" : ""}`} style={{ height: "0.2vw" }}></span>
+                <span className={`w-full secondary-color-bg my-auto mb-0 opacity-80 ${isMenuOpen ? "cross-bottom" : ""}`} style={{ height: "0.2vw" }}></span>
             </div>
         </button>
     )

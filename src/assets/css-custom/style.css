@@ -206,7 +206,7 @@
 .cross-top {
     transform: rotate(-45deg);
     height: 1px;
-    margin: 0 auto;
+    margin: auto 0;
 }
 
 .cross-center {
@@ -215,7 +215,8 @@
 
 .cross-bottom {
     position: absolute;
-    margin: 0 auto;
+    bottom: 50%;
+    top: 50%;
     transform: rotate(45deg);
 }
 
