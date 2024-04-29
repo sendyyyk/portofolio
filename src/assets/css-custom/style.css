@@ -120,13 +120,13 @@
     }
 
     #header-wrap header nav .logo-navbar {
-        line-height: 6.3vw;
-        font-size: 6.3vw;
+        line-height: 8vw;
+        font-size: 8vw;
     }
 
     #header-wrap header button#hamburger-btn {
-        width: 6.3vw;
-        height: 6.3vw;
+        width: 7vw;
+        height: 6vw;
     }
 
 
