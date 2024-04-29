@@ -1,6 +1,5 @@
 import { classHeight } from '../../components/Layouts/DropdownMenu';
-// import { menuMbEx } from '../../components/Elements/navbar/Navbar-Mobile/navbarMobile';
-// import { menuBarEx } from '../../components/Elements/navbar//menu';
+
 document.addEventListener("DOMContentLoaded", function () {
     function scrollOveflow() {
         const dropdownItem = document.getElementById("dropdown-item");
@@ -13,12 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-    // function cloneMenu() {
-    //     const clonedElement = menuBarEx.current.cloneNode(true);
-    //     clonedElement.classList.add("menu-bar-mobile");
-    //     menuMbEx.current.appendChild(clonedElement);
-    // }
 
     function menuBarMobile() {
         if (window.innerWidth <= 992) {
@@ -41,9 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    
+// import { menuBarEx } from '../menu';
+// const clonedElement = menuBarEx.current.cloneNode(true);
+// clonedElement.classList.add("menu-bar-mobile");
+// menuMb.current.appendChild(clonedElement);
+
     window.onload = function () {
         scrollOveflow()
-        // cloneMenu()
         dropdownShow()
         menuBarMobile()
     };
