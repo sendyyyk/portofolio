@@ -17,15 +17,16 @@ const HamburgerBtn = (props) => {
         line3Ref.current.classList.toggle("cross-bottom");
     }
 
+    
     useEffect(() => {
         const navbarMobile = document.getElementById("navbar-mobile");
         const menuMobile = navbarMobile.querySelector(".menu-mobile");
-
+        
         function handleResize() {
             if (window.innerWidth <= 992) {
                 document.getElementById("hamburger-btn").classList.remove("hidden");
                 document.getElementById("hamburger-btn").classList.add("flex");
-
+    
                 const buttonWidth = document.getElementById("hamburger-btn").offsetWidth;
                 const buttonHeight = document.getElementById("hamburger-btn").offsetHeight;
                 if (lineWrapRef.current) {
@@ -42,15 +43,11 @@ const HamburgerBtn = (props) => {
                 line3Ref.current.classList.remove("cross-bottom");
             }
         }
-        
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('load', handleResize);
-        
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('load', handleResize);
-        };
+
     }, []);
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
 
     return (
         <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
