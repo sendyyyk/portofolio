@@ -1,4 +1,4 @@
-import { classHeight } from '../../components/Layouts/DropdownMenu';
+// import { classHeight } from '../../components/Layouts/DropdownMenu';
 
 document.addEventListener("DOMContentLoaded", function () {
     function scrollOveflow() {
@@ -19,30 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function dropdownShow() {
-        let dropdownBtn = document.querySelector("#navbar-mobile #dropdown-btn")
-        const thirdLi = document.querySelector("#navbar-mobile .list-menu").parentElement.querySelector(":nth-child(3)");
-        dropdownBtn.addEventListener('click', function (event) {
-            event.preventDefault();
-            dropdownBtn.classList.toggle("primary-color-bg");
-            if (thirdLi.clientHeight == dropdownBtn.clientHeight) {
-                thirdLi.style.height = `${classHeight}`;
-            } else {
-                thirdLi.style.height = ``;
-            }
-        });
-
-    }
-
-    
-// import { menuBarEx } from '../menu';
-// const clonedElement = menuBarEx.current.cloneNode(true);
-// clonedElement.classList.add("menu-bar-mobile");
-// menuMb.current.appendChild(clonedElement);
+    // function dropdownShow() {
+    //     let dropdownBtn = document.querySelector("#navbar-mobile #dropdown-btn")
+    //     const thirdLi = document.querySelector("#navbar-mobile .list-menu").parentElement.querySelector(":nth-child(3)");
+    //     dropdownBtn.addEventListener('click', function (event) {
+    //         event.preventDefault();
+    //         console.log("ngen");
+    //         dropdownBtn.classList.toggle("primary-color-bg");
+    //         if (thirdLi.clientHeight == dropdownBtn.clientHeight) {
+    //             thirdLi.style.height = `${classHeight}`;
+    //         } else {
+    //             thirdLi.style.height = ``;
+    //         }
+    //     });
+    // }
 
     window.onload = function () {
         scrollOveflow()
-        dropdownShow()
+        // dropdownShow()
         menuBarMobile()
     };
 

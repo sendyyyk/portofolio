@@ -1,10 +1,23 @@
 import Button from "../Button";
 import DropdownList from "./dropdown";
-import DropdownMenu from "../../Layouts/DropdownMenu";
+import DropdownMenu, { classHeight } from "../../Layouts/DropdownMenu";
 import { useRef } from "react";
 
-const Menu = ({classStyle}) => {
+const Menu = ({ classStyle }) => {
     const menuBar = useRef(null);
+    const dropdownBtn = useRef(null);
+
+    function dropdownShow() {
+        console.log("kont");
+        const thirdLi = document.querySelector("#navbar-mobile .list-menu").parentElement.querySelector(":nth-child(3)");
+        dropdownBtn.current.classList.toggle("primary-color-bg");
+        if (thirdLi.clientHeight == dropdownBtn.current.clientHeight) {
+            thirdLi.style.height = `${classHeight}`;
+        } else {
+            thirdLi.style.height = ``;
+        }
+    }
+
     return (
         <section ref={menuBar} className={`menu-bar flex ${classStyle}`}>
             <ul className="flex mt-auto text-xl h-full">
@@ -15,7 +28,7 @@ const Menu = ({classStyle}) => {
                     <a href="/about" className="block">About</a>
                 </li>
                 <li className="list-menu flex mr-16 my-auto">
-                    <a href="javascript:void(0)" id="dropdown-btn" className="dropdown flex">
+                    <a ref={dropdownBtn} href="javascript:void(0)" id="dropdown-btn" className="dropdown flex" onClick={dropdownShow}>
                         <span className="my-1" >Others</span>
                         <svg className="my-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18" /></svg>
                         <div id="dropdown-item" className="dropdown-item absolute right-0 top-0 w-0 h-44 mt-28 cursor-default duration-500 overflow-x-auto">

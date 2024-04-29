@@ -47,7 +47,7 @@
 /* class color ================ */
 
 .translate-y-min {
-    transform: translateY(-100%);
+    transform: translateY(-300%);
 }
 
 * {
@@ -246,6 +246,7 @@
     text-align: center;
     line-height: 10vw;
     border-bottom: 0.3vw solid var(--secondary-color);
+    z-index: 99;
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul {
@@ -277,6 +278,7 @@
     height: auto;
     transition: all 0.5s;
     overflow-y: hidden;
+    z-index: 0;
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li:nth-child(3) a {
@@ -327,7 +329,8 @@
     bottom: 0;
     margin-top: auto;
     width: calc(100% / 2.5);
-    box-shadow: 0 0 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
+    backdrop-filter: blur(2vw);
+    box-shadow: 0 0vw 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button {

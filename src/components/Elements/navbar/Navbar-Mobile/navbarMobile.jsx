@@ -26,7 +26,7 @@ const NavbarMobile = () => {
             }
         }
 
-        handleResize(); // Panggil handleResize saat komponen dimuat
+        handleResize();
 
         window.addEventListener('resize', handleResize);
         window.addEventListener('load', handleResize);
