@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { menuMbEx } from '../navbar/Navbar-Mobile/navbarMobile';
 
 const HamburgerBtn = (props) => {
     const lineWrapRef = useRef(null);
@@ -9,8 +10,6 @@ const HamburgerBtn = (props) => {
     }
 
     useEffect(() => {
-        const navbarMobile = document.getElementById("navbar-mobile");
-        const menuMobile = navbarMobile.querySelector(".menu-mobile");
         if (window.innerWidth <= 992) {
             document.getElementById("hamburger-btn").classList.remove("hidden");
             document.getElementById("hamburger-btn").classList.add("flex");
@@ -24,7 +23,6 @@ const HamburgerBtn = (props) => {
         } else {
             document.getElementById("hamburger-btn").classList.remove("flex");
             document.getElementById("hamburger-btn").classList.add("hidden");
-            menuMobile.classList.add("translate-y-min");
             document.body.classList.remove("overflow-hidden");
             setIsMenuOpen(false);
         }
@@ -32,10 +30,8 @@ const HamburgerBtn = (props) => {
     }, []);
 
     useEffect(() => {
-        const navbarMobile = document.getElementById("navbar-mobile");
-        const menuMobile = navbarMobile.querySelector(".menu-mobile");
-        if (menuMobile) {
-            menuMobile.classList.toggle("translate-y-min", !isMenuOpen);
+        if (menuMbEx.current) {
+            menuMbEx.current.classList.toggle("translate-y-min", !isMenuOpen);
             document.body.classList.toggle("overflow-hidden", isMenuOpen);
         }
     }, [isMenuOpen]);
