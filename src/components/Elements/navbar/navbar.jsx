@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="flex justify-between w-full">
                 <Logo>Sendy Cheeks</Logo>
                 <Menu></Menu>
-                <HamburgerBtn dimention="w-12 h-12"></HamburgerBtn>
+                <HamburgerBtn></HamburgerBtn>
             </div>
         </nav>
     )

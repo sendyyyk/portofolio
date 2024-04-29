@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const HamburgerBtn = (props) => {
-    const { dimention } = props;
     const lineWrapRef = useRef(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -52,8 +51,8 @@ const HamburgerBtn = (props) => {
     }, [isMenuOpen]);
 
     return (
-        <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
-            <div ref={lineWrapRef} className={`line-wrap flex flex-col relative justify-center mx-auto my-auto ${dimention}`}>
+        <button id="hamburger-btn" className={`flex w-12 h-12 my-auto shadow-xl`} type="button" onClick={handleClick}>
+            <div ref={lineWrapRef} className={`line-wrap flex flex-col relative justify-center mx-auto my-auto w-12 h-12`}>
                 <span className={`w-full bg-primary h-1/6 my-0 mb-auto opacity-80 ${isMenuOpen ? "cross-top" : ""}`} style={{ height: "0.3vw" }}></span>
                 <span className={`w-full bg-primary h-1/6 mx-auto opacity-80 ${isMenuOpen ? "cross-center" : ""}`} style={{ height: "0.3vw" }}></span>
                 <span className={`w-full bg-primary h-1/6 my-auto mb-0 opacity-80 ${isMenuOpen ? "cross-bottom" : ""}`} style={{ height: "0.3vw" }}></span>
