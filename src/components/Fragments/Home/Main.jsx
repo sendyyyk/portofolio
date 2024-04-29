@@ -84,9 +84,6 @@ const MainHome = () => {
                     </section>
                 </div>
             </div>
-            <div className="h-96 w-full bg-blue-400">
-                dadada
-            </div>
         </main>
     )
 }
