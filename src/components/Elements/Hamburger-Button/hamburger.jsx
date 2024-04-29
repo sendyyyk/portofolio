@@ -44,10 +44,10 @@ const HamburgerBtn = (props) => {
             }
         }
 
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
     }, []);
 
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('load', handleResize);
 
     return (
         <button id="hamburger-btn" className={`flex ${dimention} my-auto shadow-xl`} type="button" onClick={handleClick}>
