@@ -1,20 +1,31 @@
 import Button from "../Button";
 import DropdownList from "./dropdown";
 import DropdownMenu, { classHeight } from "../../Layouts/DropdownMenu";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Menu = ({ classStyle }) => {
     const menuBar = useRef(null);
     const dropdownBtn = useRef(null);
+    const dropdownItem = useRef(null);
 
-    function dropdownShow() {
-        console.log("kont");
+    function dropdownClick() {
         const thirdLi = document.querySelector("#navbar-mobile .list-menu").parentElement.querySelector(":nth-child(3)");
-        dropdownBtn.current.classList.toggle("primary-color-bg");
-        if (thirdLi.clientHeight == dropdownBtn.current.clientHeight) {
-            thirdLi.style.height = `${classHeight}`;
+        if (window.innerWidth <= 992) {
+            dropdownBtn.current.classList.toggle("primary-color-bg");
+            if (thirdLi.clientHeight == dropdownBtn.current.clientHeight) {
+                thirdLi.style.height = `${classHeight}`;
+            } else {
+                thirdLi.style.height = ``;
+            }
+        } 
+    }
+
+    function dropdownWheel(event) {
+        var deltaY = event.deltaY || event.detail || -event.wheelDelta;
+        if (deltaY > 0) {
+            dropdownItem.current.scrollLeft -= 512;
         } else {
-            thirdLi.style.height = ``;
+            dropdownItem.current.scrollLeft += 512;
         }
     }
 
@@ -28,10 +39,10 @@ const Menu = ({ classStyle }) => {
                     <a href="/about" className="block">About</a>
                 </li>
                 <li className="list-menu flex mr-16 my-auto">
-                    <a ref={dropdownBtn} href="javascript:void(0)" id="dropdown-btn" className="dropdown flex" onClick={dropdownShow}>
+                    <a ref={dropdownBtn} href="javascript:void(0)" id="dropdown-btn" className="dropdown flex" onClick={dropdownClick} onWheel={dropdownWheel}>
                         <span className="my-1" >Others</span>
                         <svg className="my-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18" /></svg>
-                        <div id="dropdown-item" className="dropdown-item absolute right-0 top-0 w-0 h-44 mt-28 cursor-default duration-500 overflow-x-auto">
+                        <div ref={dropdownItem} id="dropdown-item" className="dropdown-item absolute right-0 top-0 w-0 h-44 mt-28 cursor-default duration-500 overflow-x-auto">
                             <DropdownMenu>
                                 <DropdownList fontStyle="text-base" text="Skills">
                                     <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 20">
