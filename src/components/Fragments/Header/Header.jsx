@@ -1,16 +1,26 @@
+import React, { useEffect, useRef } from 'react';
 import Navbar from "../../Elements/navbar/navbar";
 import NavbarMobile from "../../Elements/navbar/Navbar-Mobile/navbarMobile";
-import React, { useEffect, useRef } from 'react';
+import { menuBarEx } from '../../Elements/navbar/menu';
+import { menuMbEx } from '../../Elements/navbar/Navbar-Mobile/navbarMobile';
 
+function menuBar() {
+    const clonedElement = menuBarEx.current.cloneNode(true);
+    clonedElement.classList.add("menu-bar-mobile");
+    menuMbEx.current.appendChild(clonedElement);
+}
 const Header = () => {
     const headerWrap = useRef(null);
+    let xxx;
 
     useEffect(() => {
+        xxx = menuBar();
+        
         function headerHeight() {
             const bodyHeight = document.body.clientHeight;
             headerWrap.current.style.height = bodyHeight + "px";
         }
-
+        
         headerHeight();
         window.addEventListener("resize", headerHeight);
         window.addEventListener("load", headerHeight);
@@ -26,7 +36,7 @@ const Header = () => {
             <header className="sticky h-28 mt-10 top-0 z-40">
                 <Navbar></Navbar>
             </header>
-            <NavbarMobile></NavbarMobile>
+            <NavbarMobile>{xxx}</NavbarMobile>
         </div>
     )
 }

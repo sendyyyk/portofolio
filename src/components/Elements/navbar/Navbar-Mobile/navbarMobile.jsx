@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 let menuMbEx;
 
-const NavbarMobile = () => {
+const NavbarMobile = (props) => {
+    const {menuBar} = props;
     const navMb = useRef(null);
     const menuMb = useRef(null);
 
@@ -36,7 +37,7 @@ const NavbarMobile = () => {
 
     return (
         <div ref={navMb} id="navbar-mobile" className={`hidden absolute left-0 right-0 top-0 bottom-0 w-full`}>
-            <div ref={menuMb} className='menu-mobile flex items-end fixed left-0 right-0 top-0 bottom-0 w-full bg-white z-20 duration-500 translate-y-min'></div>
+            <div ref={menuMb} className='menu-mobile flex items-end fixed left-0 right-0 top-0 bottom-0 w-full bg-white z-20 duration-500 translate-y-min'>{menuBar}</div>
         </div>
     )
 }
