@@ -7,7 +7,7 @@
     --bg-secondary-rgb: 37, 37, 37;
     --bg-black: #000000;
     --bg-color: #eeeeee;
-    --primary-color: #ca913b;
+    --primary-color: #5f9ea0;
     --secondary-color: #252525;
 }
 
@@ -18,6 +18,7 @@
 
 .primary-color-txt {
     color: var(--primary-color);
+    stroke: var(--primary-color);
 }
 
 .bg-black {
@@ -26,6 +27,7 @@
 
 .bg-black-txt {
     color: var(--bg-black);
+    stroke: var(--bg-black);
 }
 
 .secondary-color-bg {
@@ -34,6 +36,7 @@
 
 .secondary-color-txt {
     color: var(--secondary-color);
+    stroke: var(--secondary-color);
 }
 
 .bg-white {
@@ -42,6 +45,7 @@
 
 .bg-white-txt {
     color: var(--bg-color);
+    stroke: var(--bg-color);
 }
 
 /* class color ================ */
@@ -55,6 +59,9 @@
     color: var(--secondary-color);
 }
 
+#hero-image div.container-custom {
+    
+}
 
 @media screen and (max-width: 1400px) {
 
@@ -134,8 +141,9 @@
     #hero-image div.container-custom {
         flex-direction: column;
         justify-content: flex-start;
-        width: 71vw;
-        height: 85vw;
+        width: 100%;
+        height: auto;
+        padding: 0 5vw;
     }
 
     #hero-image .hero-title {
@@ -154,7 +162,10 @@
         margin-bottom: 3vw;
         padding: 0;
     }
-
+    #hero-image .hero-vid-lap, .hero-vid-phn {
+        border-radius: 3vw;
+    }
+    
     .hero-title h1 {
         margin-bottom: 1vw;
     }
@@ -367,7 +378,6 @@
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li a span {
     margin: 0 0 0 1vw;
-    color: var(--secondary-color);
     font-size: 2.5vw;
     font-weight: 500;
 }
@@ -414,19 +424,8 @@ path {
     transition: all 0.5s;
 }
 
-header nav .menu-bar ul li a,
-span,
-path,
-svg {
-    color: rgba(37, 37, 37, 0.7);
-}
-
-header nav .menu-bar ul li a:hover,
-a:hover span,
-a:hover path,
-a:hover svg {
+header nav .menu-bar ul li a:hover {
     color: var(--bg-black);
-    stroke: var(--secondary-color);
 }
 
 header nav .menu-bar ul .list-menu a::after {
@@ -530,7 +529,11 @@ header nav .menu-bar ul .list-menu:last-child button:hover {
 
 #hero-image {
     height: 100vh;
-    background: linear-gradient(to bottom, var(--primary-color), var(--bg-color));
+    background-image: url(../../../public/img-vid/image/background-image/bg-hero-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(to bottom, var(--primary-color), var(--bg-color)); */
 }
 
 /* Hero Title */

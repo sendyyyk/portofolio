@@ -33,15 +33,15 @@ const Menu = ({ classStyle }) => {
         <section ref={menuBar} className={`menu-bar flex ${classStyle}`}>
             <ul className="flex mt-auto text-xl h-full">
                 <li className="list-menu flex mr-16 my-auto">
-                    <a href="/" className="block">Home</a>
+                    <a href="/" className="block secondary-color-txt">Home</a>
                 </li>
                 <li className="list-menu flex mr-16 my-auto">
-                    <a href="/about" className="block">About</a>
+                    <a href="/about" className="block secondary-color-txt">About</a>
                 </li>
                 <li className="list-menu flex mr-16 my-auto">
                     <a ref={dropdownBtn} href="javascript:void(0)" id="dropdown-btn" className="dropdown flex" onClick={dropdownClick} onWheel={dropdownWheel}>
-                        <span className="my-1" >Others</span>
-                        <svg className="my-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18" /></svg>
+                        <span className="my-1 secondary-color-txt" >Others</span>
+                        <svg className="my-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path className="secondary-color-txt" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M36 18L24 30L12 18" /></svg>
                         <div ref={dropdownItem} id="dropdown-item" className="dropdown-item absolute right-0 top-0 w-0 h-44 mt-28 cursor-default duration-500 overflow-x-auto">
                             <DropdownMenu>
                                 <DropdownList fontStyle="text-base" text="Skills">

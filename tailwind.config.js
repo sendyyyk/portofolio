@@ -24,7 +24,7 @@ export default {
       },
 
       color: {
-        'primary': 'rgb(37, 37, 37)'
+        'zzz': 'rgb(37, 37, 37)'
       },
 
       boxShadow: {
