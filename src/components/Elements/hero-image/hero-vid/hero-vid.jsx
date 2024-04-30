@@ -17,7 +17,7 @@ const HeroVideo = (props) => {
                     <source src="img-vid/video/hero-video/video1.mp4" type="video/mp4" />
                 </video>
             </div>
-            <div className='hero-vid-tab absolute rounded-lg overflow-hidden z-10' style={{ width: "10.5%", height: "22.5%", left: "30.5%", bottom: "10%"}}>
+            <div className='hero-vid-wat absolute rounded-lg overflow-hidden z-10' style={{ width: "10.5%", height: "22.5%", left: "30.5%", bottom: "10%"}}>
                 <video className="w-full h-full object-cover" loop autoPlay muted >
                     <source src="img-vid/video/hero-video/video1.mp4" type="video/mp4" />
                 </video>
