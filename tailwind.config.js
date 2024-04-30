@@ -27,6 +27,9 @@ export default {
         'zzz': 'rgb(37, 37, 37)'
       },
 
+      borderRadius: {
+        '1.5xl': '17px'
+      },
       boxShadow: {
         '2xl': ' 0 0 5px 2px rgba(37, 37, 37, 0.5)',
         '1xl': ' 0 0 5px 2px rgba(37, 37, 37, 0.2)',
