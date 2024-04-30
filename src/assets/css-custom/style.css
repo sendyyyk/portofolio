@@ -59,9 +59,6 @@
     color: var(--secondary-color);
 }
 
-#hero-image div.container-custom {
-    
-}
 
 @media screen and (max-width: 1400px) {
 
@@ -162,6 +159,7 @@
         margin-bottom: 3vw;
         padding: 0;
     }
+
     #hero-image .hero-vid-lap, .hero-vid-phn {
         border-radius: 3vw;
     }

@@ -17,7 +17,7 @@ const HeroImage = () => {
             if (currentPath === "/") {
                 if (window.innerWidth <= 992) {
                     if (window.innerWidth <= 576) {
-                        if (window.innerHeight <= heroIconHeight + headerHeight * 3) {
+                        if (window.innerHeight <= heroIconHeight + headerHeight * 4) {
                             heroImage.current.style.height = `calc(100vh + 400px)`;
                         } else {
                             heroImage.current.style.height = `100vh`;
@@ -65,12 +65,12 @@ const HeroImage = () => {
         <div ref={heroImage} id="hero-image" className="flex">
             <div className="container-custom item-zindex flex justify-between items-center my-auto mx-auto px-5">
                 <section className="hero-title w-3/5">
-                    <h1 className="mb-3">
+                    <h1 className="mx-auto">
                         <span className="text-8xl">
                             Selamat Datang
                         </span>
                     </h1>
-                    <div className="scroll-text-wrap mb-7 overflow-hidden w-10/12">
+                    <div className="scroll-text-wrap my-3 overflow-hidden w-10/12">
                         <ScrollText style="text-3xl">
                             Terima Kasih Sudah Mengunjungi Halaman Website Saya.
                         </ScrollText>
