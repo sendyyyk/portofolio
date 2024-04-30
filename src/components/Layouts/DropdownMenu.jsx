@@ -7,7 +7,7 @@ const DropdownMenu = (props) => {
 
     useEffect(() => {
         const liCholdCount = widthUlRef.current.childElementCount;
-        classHeight = `calc(10vw * ${liCholdCount + 1})`;
+        classHeight = `calc(13vw * ${liCholdCount + 1})`;
         if (widthUlRef.current.childElementCount > 3) {
             widthUlRef.current.style.width = `calc(${ liCholdCount } * 100% / 3)`;
         }

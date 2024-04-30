@@ -6,7 +6,6 @@ const DropdownList = (props) => {
 
     useEffect(() => {
         li.current.style.width = "calc(100% / 3)";
-        
     }, [])  
 
     return (

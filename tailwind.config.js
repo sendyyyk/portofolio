@@ -23,10 +23,6 @@ export default {
         'primary': 'rgb(37, 37, 37)'
       },
 
-      color: {
-        'zzz': 'rgb(37, 37, 37)'
-      },
-
       borderRadius: {
         '1.5xl': '17px'
       },

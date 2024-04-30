@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 
 const ScrollText = (props) => {
-    
+    const { children, style } = props;
     const scrollTextRef = useRef(null);
 
     useEffect(() => {
@@ -14,7 +14,6 @@ const ScrollText = (props) => {
         }
     }, []);
 
-    const { children, style } = props;
     return (
         <div ref={scrollTextRef} className={`scroll-text w-full h-full whitespace-nowrap duration-500 ${style}`}>
             {children}
