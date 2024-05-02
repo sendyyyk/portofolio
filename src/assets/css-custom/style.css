@@ -430,7 +430,7 @@
     height: 100%;
     border-radius: 0;
     border: none;
-    background-color: var(--bg-color);
+    background-color: rgba(var(--bg-primary-rgb), 0.5);
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button path {
