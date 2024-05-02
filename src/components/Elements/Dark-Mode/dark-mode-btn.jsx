@@ -70,7 +70,7 @@ const DarkModeButton = () => {
     }, [theme])
 
     return (
-        <Button variant="dark-mode-btn w-8 h-8 px-0 my-auto rounded-full duration-500 shadow-1xl hover:shadow-2xl" onClick={toggleTheme}>
+        <Button variant="dark-mode-btn w-8 h-8 px-0 my-auto rounded-full duration-500 hover:shadow-2xl" onClick={toggleTheme}>
             {theme == "dark" ? (
                 icon[0]
             ) : (

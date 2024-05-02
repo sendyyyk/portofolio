@@ -42,11 +42,11 @@ const HamburgerBtn = () => {
     }, [isMenuOpen]);
 
     return (
-        <button id="hamburger-btn" className={`flex w-12 h-12 my-auto shadow-xl`} type="button" onClick={handleClick}>
+        <button id="hamburger-btn" className={`flex w-12 h-12 my-auto`} type="button" onClick={handleClick}>
             <div ref={lineWrapRef} className={`line-wrap flex flex-col justify-between relative mx-auto my-auto w-full h-full `}>
-                <span className={`w-full secondary-color-bg-x my-0 mb-auto opacity-80 ${isMenuOpen ? "cross-top" : ""}`} style={{ height: "0.5vw" }}></span>
-                <span className={`w-full secondary-color-bg-x mx-auto opacity-80 ${isMenuOpen ? "cross-center" : ""}`} style={{ height: "0.5vw" }}></span>
-                <span className={`w-full secondary-color-bg-x my-auto mb-0 opacity-80 ${isMenuOpen ? "cross-bottom" : ""}`} style={{ height: "0.5vw" }}></span>
+                <span className={`w-full primary-color-bg my-0 mb-auto opacity-80 ${isMenuOpen ? "cross-top" : ""}`} style={{ height: "0.5vw" }}></span>
+                <span className={`w-full primary-color-bg mx-auto opacity-80 ${isMenuOpen ? "cross-center" : ""}`} style={{ height: "0.5vw" }}></span>
+                <span className={`w-full primary-color-bg my-auto mb-0 opacity-80 ${isMenuOpen ? "cross-bottom" : ""}`} style={{ height: "0.5vw" }}></span>
             </div>
         </button>
     )

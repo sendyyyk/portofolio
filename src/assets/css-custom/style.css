@@ -608,13 +608,13 @@ header nav .menu-bar ul .list-menu:nth-child(3) .dropdown-item::-webkit-scrollba
 }
 
 /* Dark Mode Button */
-header nav .menu-bar ul .list-menu:last-child button {
-    box-shadow: 0 0 5px 1px rgba(37, 37, 37, 0.5);
+header nav .menu-bar ul li:last-child button {
+    box-shadow: 0 0 5px 1px rgba(var(--bg-primary-rgb), 0.6);
     transition: all 0.5s;
 }
 
-header nav .menu-bar ul .list-menu:last-child button:hover {
-    box-shadow: 0 0 10px 5px rgba(37, 37, 37, 0.6);
+header nav .menu-bar ul li:last-child button:hover {
+    box-shadow: 0 0 10px 5px rgba(var(--bg-primary-rgb), 0.8);
 }
 
 /* Hero Image */
