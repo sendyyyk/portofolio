@@ -14,7 +14,7 @@ const DropdownMenu = (props) => {
     }, []);
 
     return (
-        <ul ref={widthUlRef} id='dropdown-menu' className="flex absolute bottom-0 w-full h-full mt-4 duration-500">
+        <ul ref={widthUlRef} id='dropdown-menu' className="flex absolute bottom-0 w-full h-full mt-4 duration-500 secondary-color-bg-x">
             {children}
         </ul>
     )

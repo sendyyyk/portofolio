@@ -3,11 +3,11 @@
 :root {
     --bg-black-rgb: 0, 0, 0;
     --bg-color-rgb: 238, 238, 238;
-    --bg-primary-rgb: 248 113 113;
+    --bg-primary-rgb: 95, 158, 160;
     --bg-secondary-rgb: 37, 37, 37;
     --bg-black: #000000;
-    --bg-color: #eeeeee;
-    --primary-color: #5f9ea0;
+    --bg-color: #ffffff;
+    --primary-color: rgb(95, 158, 160);
     --secondary-color: #252525;
 }
 
@@ -21,6 +21,20 @@
     stroke: var(--primary-color);
 }
 
+.primary-color-bg-x {
+    background-color: var(--primary-color);
+}
+
+.primary-color-txt-x {
+    color: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.fill-primary-x {
+    color: var(--bg-black);
+    stroke: var(--primary-color);
+}
+
 .bg-black {
     background-color: var(--bg-black);
 }
@@ -28,6 +42,19 @@
 .bg-black-txt {
     color: var(--bg-black);
     stroke: var(--bg-black);
+}
+
+.bg-black-x {
+    background-color: var(--bg-black);
+}
+
+.bg-black-txt-x {
+    color: var(--bg-black);
+    stroke: var(--bg-black);
+}
+
+.fill-black-x {
+    fill: var(--bg-black);
 }
 
 .secondary-color-bg {
@@ -39,6 +66,19 @@
     stroke: var(--secondary-color);
 }
 
+.secondary-color-bg-x {
+    background-color: var(--secondary-color);
+}
+
+.secondary-color-txt-x {
+    color: var(--secondary-color);
+    stroke: var(--secondary-color);
+}
+
+.fill-secondary-x {
+    fill: var(--secondary-color);
+}
+
 .bg-white {
     background-color: var(--bg-color);
 }
@@ -46,6 +86,29 @@
 .bg-white-txt {
     color: var(--bg-color);
     stroke: var(--bg-color);
+}
+
+.bg-white-x {
+    background-color: var(--bg-color);
+}
+
+.bg-white-txt-x {
+    color: var(--bg-color);
+    stroke: var(--bg-color);
+}
+
+.fill-white-x {
+    fill: var(--bg-color);
+}
+
+/* ====== Border Color ====== */
+
+.border-secondary {
+    border-color: var(--secondary-color);
+}
+
+.border-white {
+    border-color: var(--bg-color);
 }
 
 /* class color ================ */
@@ -258,7 +321,7 @@
     width: calc(100% / 2);
     height: calc(100% - 15vw);
     margin: 0 0 0 auto;
-    box-shadow: 0 0 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
+    box-shadow: 0 0 2vw 0.5vw rgba(var(--bg-primary-rgb), 0.5);
     overflow-y: auto;
 }
 
@@ -269,12 +332,12 @@
     top: 0;
     width: 100%;
     height: 13vw;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     font-size: 3vw;
     text-align: center;
     line-height: 13vw;
-    border-bottom: 0.3vw solid var(--secondary-color);
+    border-bottom: 0.3vw solid rgba(var(--bg-primary-rgb), 0.5);
     z-index: 99;
 }
 
@@ -297,7 +360,7 @@
     height: 13vw;
     overflow: hidden;
     margin: 0 auto;
-    border-bottom: 0.1vw solid rgba(var(--bg-secondary-rgb), 0.5);
+    border-bottom: 0.1vw solid rgba(var(--bg-primary-rgb), 0.5);
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li:nth-child(3) {
@@ -359,7 +422,7 @@
     margin-top: auto;
     width: calc(100% / 2);
     backdrop-filter: blur(2vw);
-    box-shadow: 0 0vw 2vw 0.5vw rgba(var(--bg-secondary-rgb), 0.5);
+    box-shadow: 0 0vw 2vw 0.5vw rgba(var(--bg-primary-rgb), 0.5);
 }
 
 #navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button {
@@ -368,6 +431,10 @@
     border-radius: 0;
     border: none;
     background-color: var(--bg-color);
+}
+
+#navbar-mobile .menu-mobile .menu-bar-mobile ul li:last-child button path {
+    fill: aqua;
 }
 
 /* Dark Mode Button Mobile ======= */
@@ -411,6 +478,7 @@
 body {
     height: 3000px;
     background-color: var(--bg-color);
+    transition: all 0.5s;
 }
 
 .container-custom {
@@ -444,8 +512,12 @@ path {
     transition: all 0.5s;
 }
 
-header nav .menu-bar ul li a:hover {
+header nav .menu-bar ul li a:hover > span {
     color: var(--bg-black);
+}
+
+header nav .menu-bar ul li a#dropdown-btn:hover svg.down path {
+    stroke:  var(--secondary-color);
 }
 
 header nav .menu-bar ul .list-menu a::after {
@@ -479,6 +551,7 @@ header nav .menu-bar ul .list-menu:nth-child(3):hover {
     margin-top: auto;
     margin-right: 4rem;
     height: 100%;
+    
 }
 
 header nav .menu-bar ul .list-menu:nth-child(3):hover a.dropdown {
@@ -504,7 +577,6 @@ header nav .menu-bar ul .list-menu a .dropdown-item:hover body {
 
 header nav .menu-bar ul .list-menu a .dropdown-item a {
     color: var(--bg-black);
-    background-color: rgba(var(--bg-color-rgb), 0.7);
 }
 
 header nav .menu-bar ul .list-menu a .dropdown-item a:hover {
@@ -559,7 +631,6 @@ header nav .menu-bar ul .list-menu:last-child button:hover {
 /* Hero Title */
 
 .hero-title h1 span {
-    color: rgba(var(--bg-black), 1);
     font-family: 'Alice', sans-serif;
 }
 

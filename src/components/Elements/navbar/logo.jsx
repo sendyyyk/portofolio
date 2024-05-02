@@ -5,7 +5,7 @@ const Logo = (props) => {
     
     return (
         <section className="logo-navbar flex text-5xl h-full my-auto">
-            <a href="/" className="my-auto secondary-color-txt">{children}</a>
+            <a href="/" className="my-auto secondary-color-txt-x">{children}</a>
         </section>
     )
 }

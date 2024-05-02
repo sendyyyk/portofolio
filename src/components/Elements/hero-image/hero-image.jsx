@@ -66,17 +66,17 @@ const HeroImage = () => {
             <div className="container-custom item-zindex flex justify-between items-center my-auto mx-auto px-5">
                 <section className="hero-title w-3/5">
                     <h1 className="mx-auto">
-                        <span className="text-8xl">
+                        <span className="text-8xl secondary-color-txt-x">
                             Selamat Datang
                         </span>
                     </h1>
                     <div className="scroll-text-wrap mt-5 overflow-hidden w-10/12">
-                        <ScrollText style="text-3xl">
+                        <ScrollText style="text-3xl secondary-color-txt-x">
                             Terima Kasih Sudah Mengunjungi Halaman Website Saya.
                         </ScrollText>
                     </div>
                     <Button variant="w-40 h-16 mt-4 rounded-lg shadow-1xl hover:shadow-2xl duration-500">
-                        <span className="text-primary text-xl opacity-75 hover:opacity-100">
+                        <span className="text-primary text-xl opacity-75 hover:opacity-100 secondary-color-txt-x">
                             About Me
                         </span>
                     </Button>
