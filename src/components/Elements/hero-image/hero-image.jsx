@@ -81,7 +81,7 @@ const HeroImage = () => {
                         </span>
                     </Button>
                 </section>
-                <section className="hero-icon w-2/5 h-2/5 relative bg-red-200">
+                <section className="hero-icon w-2/5 h-2/5 relative">
                     <HeroVideo></HeroVideo>
                     <HeroIcon></HeroIcon>
                 </section>
