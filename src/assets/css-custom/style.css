@@ -625,7 +625,16 @@ header nav .menu-bar ul li:last-child button:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background: linear-gradient(to bottom, var(--primary-color), var(--bg-color)); */
+}
+
+#hero-image .hero-icon::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
 }
 
 /* Hero Title */
